@@ -1,0 +1,33 @@
+@apiUrl = https://fw-teaching.fi/demo/wdbocms/api/v1
+
+GET {{apiUrl}}/products
+
+###
+
+GET https://fw-teaching.fi/demo/wdbocms/api/v1/products/1002
+
+###
+POST {{apiUrl}}/products/
+Content-Type: application/json
+
+{
+    "name": "Shoes",
+    "price": 55
+}
+###
+PATCH {{apiUrl}}/products/1002
+Content-Type: application/json
+
+{
+    "price": 30
+}
+
+###
+
+PUT {{apiUrl}}/products/1002
+Content-Type: application/json
+
+{
+    "name": "Hat",
+    "price": 25
+}

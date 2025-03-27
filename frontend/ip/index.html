@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP</title>
+</head>
+<body>
+    <h1 id="ip"></h1>
+
+    <script>
+        // sjävexekverande funktion
+        (async () => {
+           const resp = await fetch('https://vm4430.kaj.pouta.csc.fi:8001/');
+           const respJson = await resp.json();
+
+           document.querySelector('#ip').innerHTML = respJson.ip;
+            
+        })();
+
+    </script>
+</body>
+</html>

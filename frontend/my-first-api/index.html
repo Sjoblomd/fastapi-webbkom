@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min webbsida</title>
+</head>
+<body>
+    <h1>Min webbsida</h1>
+
+    <div id="content">...</div>
+    <ul id="myList"></ul>
+
+    <script>
+        // hämta innehållet från API-servern
+        async function getContent() {
+            const resp = await fetch("https://vm4430.kaj.pouta.csc.fi:8001/");
+            const data = await resp.json();
+
+            for (item of data.myList) {
+                document.querySelector("#myList").innerHTML += `<li>${item}</li>`;
+            }
+
+            document.querySelector("#content").innerHTML = data.message;
+        }
+
+        getContent();
+
+    </script>
+</body>
+</html>
